@@ -8,6 +8,14 @@ module.exports = {
         path: path.resolve("./public"),
         filename: "bundle.js"
     },
+    // css 번들링 설정
+    module:{
+        rules: [{
+            // 어떤 파일을 로더로 로딩할지 설정 정규표현식으로 .css로 끝나는 파일은 자바스크립트로 바꿔준다?
+            test: /\.css$/i,
+            use: ['style-loader', 'css-loader']
+        }]
+    },
     // 데브 서버 설정
     devServer : {
         // 감시해야할 디렉토리
