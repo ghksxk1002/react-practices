@@ -10,3 +10,8 @@ ex04: Application Bundling 어플리케이션 번들링
     5) 번들링(모듈들을 하나의 파일로 묶는것)
 5. 자바 스크립트 뿐만 아니라 다양한 assets도(images, font, css) 모듈로 취급을 한다. --> 개발시 assets의 모듈들도 관계를 표시해주어야 한다
                                                                                     그래야 webpack이 번들링시 모듈로써 번들링을 한다.
+6. 설치
+    $ npm i -D webpack webpack-cli
+    실행
+    $ npm .\node_modules\.bin\webpack --version
+    $ npx webpack --version --> npx가 위의 결로를 찾아서 실행시켜줌
