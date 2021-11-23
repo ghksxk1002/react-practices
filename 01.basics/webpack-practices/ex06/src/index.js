@@ -1,6 +1,7 @@
 // 렌더링 부분
 // DOM에서 모듈로 렌더링 되기 위해서는 모듈로 프로그래밍을 해야한다
 import {App} from './App.js'
+import './assets/css/index.css' // 스타일만 적용하겠다고 하면 이렇게 import
 
 document
     .getElementById('root') // 엘리먼트의 아이디 구하고 
