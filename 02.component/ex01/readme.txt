@@ -1,17 +1,15 @@
 ex08: JSX Tutorials
 
 01. props(property) 
-  
 
 
-02. 특징 2: Single Root node
-03. 함수 컨포넌트 만들기
-04. Pure(DOM API) React API로 함수 컨포넌트 작성
+
+02. foodList src/01 : 클래스 컨포넌트
+03. foodList src/02 : Data Flow(top-<down) :  클래스 컨포너느
+04. foodList src/03 : Data Flow(top-down)  :  함수 컨포넌트
 05. 클래스 컨포넌트 만들기
-06. 특징 3: JSX 표현식 표기법 {expression} 과 문제점
-07. 득징 4: 공백
-08. Dynamic HTML Rendering
-09. Comment
+06. foodList src/04 : validation
+  
 
 설치:
 $ npm i -D webpack webpack-cli webpack-dev-server babel-loader style-loader css-loader sass-loader node-sass @babel/core @babel/cli @babel/preset-env @babel/preset-react
