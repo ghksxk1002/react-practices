@@ -1,10 +1,10 @@
 import React from 'react';
-import Foodlist from './Foodlist';
+import KanbanBoard from './KanbanBoard';
 
 export default function(){
     return (
         <div id='App'>
-            <Foodlist />
+            <KanbanBoard />
         </div>
     )
 }
