@@ -1,9 +1,13 @@
-import React from 'react';
+import React,{Component}  from 'react';
 import Foodlist from './Foodlist';
 
-export default function(){
+export default class App extends Component{
     // 통신해서 받았다고 치고
-    const foods = [{
+    constructor(){
+        // ?
+        super(arguments);
+
+        this.foods = [{
             
             no: 1,
             name: "Melon",
@@ -14,14 +18,17 @@ export default function(){
             name: "apply",
             quantity: 90
         },{
-           
+            
             no: 3,
             name: "Melon01",
             quantity: 880
-        }]
-    return (
-        <div id='App'>
-            <Foodlist foods={foods}/>
+        }];
+    }
+    render(){
+        return (
+            <div id='App'>
+            <Foodlist foods={this.foods}/>
         </div>
-    )
+        )
+    }
 }
