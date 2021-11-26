@@ -1,7 +1,10 @@
 ex08: JSX Tutorials
 
 01. props(property) 
-
+  1) 컨포넌트의 데이터
+  2) 부모 컨포넌트에서 자식으로 전달된다.
+    - component Communication(컨포넌트 간의 통신)을 Data flow라고 하다.
+    - 
 
 
 02. foodList src/01 : 클래스 컨포넌트
