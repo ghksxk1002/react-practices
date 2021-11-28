@@ -3,6 +3,7 @@ import {PropTypes} from 'prop-types';
 
 
 export default function MyComponent({props01, props02, props03, props04, props05, props06, props07, props08, props09}) {
+    console.log(props05.map((e, i) => <b key={i}>: {i}: {e}</b>))
     return (
         <Fragment >
             <h2>Property Validation</h2>
@@ -19,7 +20,7 @@ export default function MyComponent({props01, props02, props03, props04, props05
             <span>props04: { props04 ? props04.no : '--- Not Set ---' }</span>
             <br/>
 
-            <span>props05: { props05 ? props05.map((e, i) => <b key={i}>{e}</b>) : '--- Not Set ---' }</span>
+            <span>props05: { props05 ? props05.map((e, i) => <b key={i}>: {i}: {e} :</b>) : '--- Not Set ---' }</span>
             <br/>
 
             <span>props06: { props06 ? props06() : '--- Not Set ---' }</span>
