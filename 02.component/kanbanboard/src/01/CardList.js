@@ -5,7 +5,6 @@ export default function(key, cards){
     console.log(cards);
     return(
         <Fragment>
-
         <div className='CardList'>
         <h1 >{key.title}</h1>
             {/* <!-- Begin: Card: 카드들--> */}
@@ -33,9 +32,7 @@ export default function(key, cards){
                 )}
             </div>
         </div>
-        
         {/* <!-- End: Card --> */}
-
         </Fragment>
     )
 
