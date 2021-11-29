@@ -18,7 +18,11 @@ module.exports = (env) => {
                 // babel loader 설정
                 test: /\.js$/i,     
                 exclude: /node_module/,
-                use: ['babel-loader']
+                // 바벨 로더한테 webpack config가 어디있는지 알려줘야함 파일을 옵겨놓았기 때문에
+                loader: 'babel-loader',
+                options: {
+                    configFile: path.resolve('config/babel.config.json')
+                }
             },{
                 // 어떤 파일을 로더로 로딩할지 설정 정규표현식으로 .css로 끝나는 파일은 자바스크립트로 바꿔준다?
                 test: /\.(sa|sc|c)ss$/i,

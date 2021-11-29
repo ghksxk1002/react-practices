@@ -18,8 +18,8 @@ export default function(key, cards){
                     <ul> 
                         {/* <!-- Begin: TaskList Task: 업무리스트의 업무들 보이기--> */}
                         {e.tasks.map((e, i)=>
-                            <li className='TaskList__Task'>
-                                <input type='checkbox' checked='' />
+                            <li className='TaskList__Task' key={i}>
+                                <input type='checkbox' defaultChecked=''/>
                                 {e.name}
                                 <a href='#' className='TaskList__Task--remove'></a>
                             </li>
