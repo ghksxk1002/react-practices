@@ -6,8 +6,8 @@ ex01: Property
     3. Kanaboard - ex01
 
 ex02
-    1. Component styling
-    2. Kanaboard - ex02 styling    
+    1. Component   styling
+    2. Kanaboard - styling    
 ex03
     1. React Event
     2. Kanaboard - ex03, ex04
