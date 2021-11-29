@@ -2,7 +2,7 @@ const path =  require('path');
 
 module.exports = (env) => {
     // 처음 의존성 검사를 하는 곳
-    const entry = path.resolve(`./src/${env.src}/index.js`); 
+    const entry = path.resolve(`src/index.js`); 
 
     return {
         mode: "development",
@@ -27,7 +27,7 @@ module.exports = (env) => {
                 // 어떤 파일을 로더로 로딩할지 설정 정규표현식으로 .css로 끝나는 파일은 자바스크립트로 바꿔준다?
                 test: /\.(sa|sc|c)ss$/i,
                 use: ['style-loader', 
-                {loader:'css-loader', options:{modules:'false'}},
+                {loader:'css-loader', options:{modules: false}},
                 'sass-loader']
             }, {
                 // [image-uploader] webpack 4 까지만 가능 5는 페기됨
