@@ -26,7 +26,9 @@ module.exports = (env) => {
             },{
                 // 어떤 파일을 로더로 로딩할지 설정 정규표현식으로 .css로 끝나는 파일은 자바스크립트로 바꿔준다?
                 test: /\.(sa|sc|c)ss$/i,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                use: ['style-loader', 
+                {loader:'css-loader', options:{modules: env['css-modules'] !== 'false'}},
+                'sass-loader']
             }, {
                 // [image-uploader] webpack 4 까지만 가능 5는 페기됨
                 test: /\.(png|gif|jpe?g|svg|ico|tiff?|bmp)$/i, // 파일 이름 지정
