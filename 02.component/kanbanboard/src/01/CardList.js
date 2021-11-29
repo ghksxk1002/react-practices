@@ -1,39 +1,18 @@
 import React,{Fragment} from "react";
+import Card from "./Card";
 
-export default function(key, cards){  
-    console.log(key);
-    console.log(cards);
+export default function({title, cards}){  
+    //console.log(key);
     return(
-        <Fragment>
         <div className='CardList'>
-        <h1 >{key.title}</h1>
+        <h1 >{title}</h1>
             {/* <!-- Begin: Card: 카드들--> */}
-            <div className='Card'>
-                {key.cards.map((e)=>
-                <Fragment>
-                    <div className='Card__Title'>{e.title}</div>
-                    <div className='Card__Details'>{e.description}</div>
-                    {/* <!-- Begin: TaskList: 업무 리스트 --> */}
-                    <div className='TaskList'>
-                    <ul> 
-                        {/* <!-- Begin: TaskList Task: 업무리스트의 업무들 보이기--> */}
-                        {e.tasks.map((e, i)=>
-                            <li className='TaskList__Task' key={i}>
-                                <input type='checkbox' defaultChecked=''/>
-                                {e.name}
-                                <a href='#' className='TaskList__Task--remove'></a>
-                            </li>
-                        )}
-                        {/* <!-- End: TaskList Task--> */}
-                    </ul>
-                    </div>
-                    {/* <!-- End: TaskList --> */}
-                </Fragment>
-                )}
-            </div>
+            {cards.map((card)=> <Card 
+                                no={card.no}
+                                title={card.title}
+                                tasks={card.tasks} 
+                                description={card.description}/>
+            )}
         </div>
-        {/* <!-- End: Card --> */}
-        </Fragment>
     )
-
 }
