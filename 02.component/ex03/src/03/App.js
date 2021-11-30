@@ -7,7 +7,7 @@ export default function App() {
     }
 
     const onAddFormSubmit = function(event) {
-        event.preventDefault();
+        event.preventDefault(); //DOM API 인 preventDefault()
         console.log(event.target.name, ':', 'Ajax로 등록할 겁니다.');
     }
 
@@ -22,12 +22,12 @@ export default function App() {
                 name='addForm'
                 method='post'
                 action='/do/not/go'
-                >
+                onSubmit={ onAddFormSubmit }>
                 <input
                     type='text'
                     name='message'
                     placeholder='메세지를 입력 하세요'
-                    />
+                    onChange={ onChangeMessageInput }/>
                 <br/>
                 <br/>
                 <input
