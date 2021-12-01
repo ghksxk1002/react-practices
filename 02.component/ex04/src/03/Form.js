@@ -4,7 +4,7 @@ import './assets/Form.css';
 // 통으로 발리데이션을 하고 싶을때
 export default function Form() {
     const onSubmit = (e) => {
-        e.preventDafault()
+        e.preventDefault()
 
         // 태그의 name으로 값을 찾아와서
         console.log(e.target.email.value, ":", e.target.password.value);

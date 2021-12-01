@@ -43,18 +43,19 @@ export default function Form() {
                 id="name" 
                 name="name" 
                 type="text" 
-                value={ name } 
-                onChange={ onChangeInputName }/> 
+                defaultValue ={ name } 
+                onChange={ onChangeInputName }
+                /> 
 
             <label htmlFor="email">이메일</label>
             <input 
                 id="email" 
                 name="email"
                 type="text"
-                value={ email }
-                onChange={ onChangeInputEmail }/>
+                defaultValue={ email }
+                onChange={ onChangeInputEmail } />
                 {   
-                    email === ''? null :
+                    email === '' ? null :
                     validEmail ? 
                         <FontAwesomeIcon icon={faCheckCircle} style={ {margin:5, fontSize: 16, color: 'blue'}}/>:
                         <FontAwesomeIcon icon={faTimesCircle} style={ {margin:5, fontSize: 16, color: 'red'}}/>
@@ -62,7 +63,7 @@ export default function Form() {
 
 
             <label htmlFor="password">패스워드</label>
-            <input id="password" name="password" type="password" value={ "" } />
+            <input id="password" name="password" type="password" defaultValue={ "" } />
 
             <fieldset>
                 <legend>성별</legend>
@@ -70,23 +71,23 @@ export default function Form() {
                 <input 
                     type="radio" 
                     name="gender" 
-                    value={ "female" } 
+                    defaultValue={ "female" } 
                     onChange={onChangeInputGender} 
                     checked={gender === 'female'} 
-                    defaultChecked={ true } />
+                     />
 
                 <label>남</label> 
                 <input 
                     type="radio" 
                     name="gender" 
-                    value={ "male" }  
+                    defaultValue={ "male" }  
                     onChange={onChangeInputGender} 
                     checked={gender === 'male'} 
-                    defaultChecked={ false } />
+                     />
             </fieldset>
 
             <label htmlFor="birthYear">생년</label>
-            <select id="birthYear" onChange={e => setBirthYear(e.target.value)} value={ birthYear }>
+            <select id="birthYear" onChange={e => setBirthYear(e.target.value)} defaultValue={ birthYear }>
                 <option value='1984'>1984년</option>
                 <option value='1985'>1985년</option>
                 <option value='1986'>1986년</option>
@@ -97,21 +98,21 @@ export default function Form() {
             </select>
 
             <label htmlFor="birthYear">자기소개</label>
-            <textarea value={""} />
+            <textarea defaultValue={""} />
 
             <fieldset>
                 <legend>약관동의</legend>
                 <input  id="agree-prov" 
                         type="checkbox" 
                         name="agreeProv" 
-                        value= { agreeProv } 
+                        defaultValue= { agreeProv } 
                         checked={agreeProv === 'yes'} 
                         onChange={ onChangeInputProv } 
-                        defaultChecked={ false } />
+                        />
                 <label>서비스 약관에 동의합니다.</label>
             </fieldset>
 
-            <input type="submit" value="가입" />
+            <input type="submit" defaultValue="가입" />
         </form>
     );
 }
