@@ -1,10 +1,10 @@
 {
-  "name": "guestbook",
+  "name": "emaillist",
   "version": "1.0.0",
   "description": "ex08: JSX Tutorials",
   "main": "index.js",
   "scripts": {
-    "debug": "npx webpack server --config config/webpack.config.js --progress --mode development" 
+    "debug": "npx webpack server --config config/webpack.config.js --progress --mode development"
   },
   "author": "",
   "license": "ISC",
