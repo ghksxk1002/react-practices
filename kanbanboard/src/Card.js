@@ -1,14 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import TaskList from "./TaskList";
 import styles from './assets/scss/Cards.scss';
 
-export default function({title, description, tasks}){  
-    //console.log(key);
+export default function({title, description, tasks, status}){  
+    const [showDetails, setShowDetails] = useState(false);
+
+
+
+    const styleSideColor ={
+        position: 'absolute',
+        zindex: -1,
+        top: 0,
+        left: 0,
+        width: 3,
+        height: '100%', 
+        backgroundColor: status === 'Doing' ? '#bb8D31' : (status === 'ToDo' ? '#3a7e28' : '#222') 
+    };
+
+
     return(
         <div className={styles.Card}>
-                <div className={styles.Card__Title} >{title}</div>
-                <div className={styles.CardCard__Details}>{description}</div>
+            <div style={ styleSideColor }/>
+            <div 
+                className={
+                    showDetails ?
+                        [styles.Card__Title, styles.Card__Title__open].join(' ') : styles.Card__Title
+                }
+                onClick={(e)=> setShowDetails(!showDetails)}>{title}
+            </div>
+            {
+                showDetails ?
+                <div className={styles.Card__Details}>
+                    {description}
                     <TaskList tasks={tasks}/>
+                </div> :
+                null
+            }
+
         </div>
     )
 
