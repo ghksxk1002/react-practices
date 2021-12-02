@@ -4,11 +4,13 @@ import Task from "./Task";
 export default function({tasks}){
     console.log(tasks)
     return (
-        <ul> 
+        <div className='TaskList'>
+            <ul> 
             {tasks.map((task)=> <Task
                                     key={task.no} 
                                     name={task.name}/>)}
-        </ul>
+            </ul>
+        </div>
 
     )
 }
