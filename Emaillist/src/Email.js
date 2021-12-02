@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './assets/scss/Email.scss';
-const Email = ({firstName, lastName, email, keyword}) => {
-    console.log(`키워드:${keyword}`);
+const Email = ({firstName, lastName, email}) => {
     return (
         <li className={styles.Email}>
             < a href='' />

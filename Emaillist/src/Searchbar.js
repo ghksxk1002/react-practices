@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import styles from './assets/scss/Searchbar.scss';
 
-const Searchbar = ({callback}) => {
-    const [keyword, setkeyword] = useState('');
-
-    const onInputKeyword = (e) =>{
-        setkeyword( e.target.value );
-        callback(e.target.value);
-    }
+const Searchbar = ({keyword, callback}) => {
 
     return (
         <div className={styles.Searchbar}>
@@ -15,7 +9,7 @@ const Searchbar = ({callback}) => {
                         type='text' 
                         placeholder='찾기' 
                         value={keyword}
-                        onChange={onInputKeyword}/>
+                        onChange={(e)=> callback(e.target.value)}/>
         </div>
     );
 };

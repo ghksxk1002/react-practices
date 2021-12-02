@@ -18,7 +18,7 @@ export default function(){
         //  게스트북 입력폰과 게스트북 계시글 리스트
         <div className={'App'}>
             <RegisterForm />
-            <Searchbar callback={ notifyKeywordChanged }/>
+            <Searchbar keyword={keyword} callback={ notifyKeywordChanged }/>
             <Emaillist keyword={keyword} emails={data}/>
         </div>
   
