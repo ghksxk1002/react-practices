@@ -1,11 +1,16 @@
 import React from 'react';
 import styles from './assets/scss/Email.scss';
-const Email = () => {
+const Email = ({firstName, lastName, email, keyword}) => {
+    console.log(`키워드:${keyword}`);
     return (
         <li className={styles.Email}>
-            둘리
-            <br/>
-            dooly@gmail.com
+            < a href='' />
+                <h4>
+                    {email}
+                </h4>
+                <span>
+                    {`${firstName}${lastName}`}
+                </span>
         </li>
     );
 };
