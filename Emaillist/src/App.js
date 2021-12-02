@@ -1,5 +1,7 @@
 import React, {Fragment} from 'react';
 import RegisterForm from './RegisterForm';
+import Searchbar from './Searchbar';
+import Emaillist from './Emaillist';
 // css도 컨포넌트 별로 쪼개는 작업
 import './assets/scss/App.scss';
 
@@ -8,6 +10,8 @@ export default function(){
         //  게스트북 입력폰과 게스트북 계시글 리스트
         <div className={'App'}>
             <RegisterForm />
+            <Searchbar />
+            <Emaillist />
         </div>
   
     )
