@@ -11,11 +11,13 @@ export default function Form() {
     const [gender, setGender] = useState('female');
     const [birthYear, setBirthYear] = useState('1984');
     const [agreeProv, setAgreeProv] = useState('no');
-    
+    const [text, setText] = useState("");
+
     const onChangeInputName = (e) => {
         //setName(e.target.value); // 값이 일력되면 이벤트가 발생하고, 변화된 상태를 랜더링
         setName(e.target.value.substr(0, 10)); // 값이 일력되면 이벤트가 발생하고, 변화된 상태를 랜더링
     }
+
     const onChangeInputEmail = (e) => {
         //setName(e.target.value); // 값이 일력되면 이벤트가 발생하고, 변화된 상태를 랜더링
         setEmail(e.target.value); // 값이 일력되면 이벤트가 발생하고, 변화된 상태를 랜더링
@@ -23,9 +25,11 @@ export default function Form() {
         const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
         setValidEmail(re.test(e.target.value));
     }
+
     const onChangeInputGender = (e) => {
         setGender(e.target.value);
     }
+
     const onChangeInputProv = (e) => {
         // API 호출을 하는경우
         const status = (e.target.value === 'no' ? 'yes' : 'no')
@@ -35,6 +39,11 @@ export default function Form() {
             setAgreeProv(status);
         }
     }
+
+    const onChangeinertText = (e) => {
+        setText(e.target.value);
+    }
+
     return (
         <form id="joinForm" name="joinForm" method="post" action="/do/not/post">
             <label htmlFor="name">이름</label>
@@ -43,7 +52,7 @@ export default function Form() {
                 id="name" 
                 name="name" 
                 type="text" 
-                defaultValue ={ name } 
+                value ={ name } 
                 onChange={ onChangeInputName }
                 /> 
 
@@ -52,7 +61,7 @@ export default function Form() {
                 id="email" 
                 name="email"
                 type="text"
-                defaultValue={ email }
+                value={ email }
                 onChange={ onChangeInputEmail } />
                 {   
                     email === '' ? null :
@@ -63,7 +72,7 @@ export default function Form() {
 
 
             <label htmlFor="password">패스워드</label>
-            <input id="password" name="password" type="password" defaultValue={ "" } />
+            <input id="password" name="password" type="password" value={ "" } />
 
             <fieldset>
                 <legend>성별</legend>
@@ -71,23 +80,23 @@ export default function Form() {
                 <input 
                     type="radio" 
                     name="gender" 
-                    defaultValue={ "female" } 
                     onChange={onChangeInputGender} 
+                    value={ "female" } 
                     checked={gender === 'female'} 
-                     />
+                    />
 
                 <label>남</label> 
                 <input 
                     type="radio" 
                     name="gender" 
-                    defaultValue={ "male" }  
                     onChange={onChangeInputGender} 
+                    value={ "male" }  
                     checked={gender === 'male'} 
-                     />
+                    />
             </fieldset>
 
             <label htmlFor="birthYear">생년</label>
-            <select id="birthYear" onChange={e => setBirthYear(e.target.value)} defaultValue={ birthYear }>
+            <select id="birthYear" onChange={e => setBirthYear(e.target.value)} value={ birthYear }>
                 <option value='1984'>1984년</option>
                 <option value='1985'>1985년</option>
                 <option value='1986'>1986년</option>
@@ -98,21 +107,21 @@ export default function Form() {
             </select>
 
             <label htmlFor="birthYear">자기소개</label>
-            <textarea defaultValue={""} />
+            <textarea value={ text } onChange={ onChangeinertText }/>
 
             <fieldset>
                 <legend>약관동의</legend>
                 <input  id="agree-prov" 
                         type="checkbox" 
                         name="agreeProv" 
-                        defaultValue= { agreeProv } 
+                        value= { agreeProv } 
                         checked={agreeProv === 'yes'} 
                         onChange={ onChangeInputProv } 
                         />
                 <label>서비스 약관에 동의합니다.</label>
             </fieldset>
 
-            <input type="submit" defaultValue="가입" />
+            <input type="submit" value="가입" readOnly/>
         </form>
     );
 }

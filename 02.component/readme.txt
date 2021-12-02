@@ -2,7 +2,7 @@ React Practices Component
 
 ex01: Property 
     1. Component 작성법
-    2. (data flow: top -> down) 데이터의 흐름으로 보면 부모 컨포넌트에서 자식 컨포넌트로 데이터를 떨궈주는것?
+    2. (data flow: top -> down) 데이터의 흐름으로 보면 부모 컨포넌트에서 자식 컨포넌트로 데이터를 떨궈주는것
     3. Kanaboard - ex01
 
 ex02
