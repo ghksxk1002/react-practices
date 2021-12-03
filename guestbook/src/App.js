@@ -1,13 +1,9 @@
-import React, {Fragment} from 'react';
-import GuestBook from './GuestBook';
-import styles from './assets/styles.css';
+import React from 'react';
+import Guestbook from './Guestbook';
+import './assets/scss/App.scss';
 
-export default function(){
+export default function App() {
     return (
-        //  게스트북 입력폰과 게스트북 계시글 리스트
-        <div className={styles.App}>
-            <GuestBook />
-        </div>
-
-    )
+        <Guestbook/>
+    );
 }
