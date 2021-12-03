@@ -36,12 +36,12 @@ export default function MessageList({messages, notifyMessage}) {
 
             // 비밀번호가 틀린 경우
             // jsonResult.data가  null
-            // setModalData(Object.assign({}, modalData, {label:'비밀번호가 일치하지 않습니다.', password: ''}));
+            setModalData(Object.assign({}, modalData, {label:'비밀번호가 일치하지 않습니다.', password: ''}));
 
             // 잘 삭제가 된 경우
             // jsonResult.data가 10
-            setModalData({isOpen: false, password:''});
-            notifyMessage.delete(modalData.messageNo);
+            //setModalData({isOpen: false, password:''});
+            //notifyMessage.delete(modalData.messageNo);
         } catch (err) {
             console.error(err);
         }

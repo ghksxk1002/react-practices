@@ -3,7 +3,6 @@ import styles from './assets/scss/WriteForm.scss';
 
 export default function WriteForm({notifyMessage}) {
     const refForm = useRef(null);
-
     const handleSubmit = (e) => {
         e.preventDefault();
         try {
