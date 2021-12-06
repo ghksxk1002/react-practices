@@ -34,8 +34,8 @@ export default class Clock extends Component {
             </div>
         );
     }
-
-    componentWillUnmount() {
-        console.log('Clock', 'componentWillUnmount');
+    // 오버라이딩하나 해서 시계지우기
+    componentWillUnmount(){
+        console.log("Clock componentWillUnmount")
     }
 }
