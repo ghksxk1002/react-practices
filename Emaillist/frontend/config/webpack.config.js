@@ -35,6 +35,10 @@ module.exports = (env) => {
             watchContentBase: true,
             host: "0.0.0.0",
             port: 9999,
+            // 프록시 설정 --> /api 로 들어오면 로컬:8888로 찌르고 응답을 받아서 전달받을수 있게 설정해놈
+            proxy: {
+                '/api': 'http://localhost:8888'
+            },
             inline: true,
             liveReload: true,
             hot: false,

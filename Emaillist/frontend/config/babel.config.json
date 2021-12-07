@@ -11,6 +11,7 @@
             }
         }],
         "@babel/react"              // 리엑트 프리셋 설정: 리엑트 파일을 바벨이 발견하면 트렌스파일을 할꺼임 --> 바벨 로더를 설정하러가자 webpackconfig gogo
-    ]
-
+        
+    ],"plugins": ["@babel/plugin-transform-runtime"]
+    
 }
