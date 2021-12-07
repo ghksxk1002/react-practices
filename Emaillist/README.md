@@ -73,10 +73,22 @@ Access to fetch at 'http://localhost:8888/api' from origin 'http://localhost:999
    1. simple request
       <pre>
          JS             brower            server
-            ----------->
-               fetch()
+            ----------->      ----------->   
+               fetch()           GET /api
+                              <-----------
+                                 200 ok   
+                                  Access-Control-Allow-Origin
+                                  ==========================
+                                  "{......................}"  
+               
 
       </pre>
+      
+      조건
+      1) GET, HEAD, POST 중의 하나의 method를 쓰는 경우
+      2) HEAD는 Accept-Language, Content-Type 등의 타입만 사용하는 경우
+      3) Content-Type 이 application/x-www-form-urlencoded 와 multipart/for-data. text/palin 인 경우
+
    2. preflight request
       <pre>
          JS             brower            server
@@ -84,12 +96,12 @@ Access to fetch at 'http://localhost:8888/api' from origin 'http://localhost:999
                fetch()           OPTIONS /api
                               <----------
                                  200 OK
-                                 Acess-Control-Allow-origin: * 모든 접그에 대해서 모두 허가
+                                 Access-Control-Allow-Origin: * 모든 접그에 대해서 모두 허가
                               ----------->   
                                  GET /api
                               <-----------
                                  200 ok   
-                                  Acess-Control-Allow-origin
+                                  Access-Control-Allow-Origin
                                   ==========================
                                   "{......................}"  
       
