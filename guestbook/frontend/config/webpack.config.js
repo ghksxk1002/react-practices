@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = (env) => ({
     mode: "none",
-    entry: path.resolve(`src/index.js`),
+    entry: path.resolve(`frontend/src/index.js`),
     output: {
         path: path.resolve('public'),
         filename: 'js/main.js',
@@ -24,16 +24,20 @@ module.exports = (env) => ({
             exclude: /node_modules/,
             loader: 'babel-loader',
             options: {
-                configFile: path.resolve('config/babel.config.json')
+                configFile: path.resolve('frontend/config/babel.config.json')
             }
         }]
     },
     devtool: "eval-source-map",
     devServer: {
-        contentBase: path.resolve('public'),
+        contentBase: path.resolve('frontend/public'),
         watchContentBase: true,
         host: "0.0.0.0",
         port: 9999,
+        // 프록시 설정 --> /api 로 들어오면 로컬:8888로 찌르고 응답을 받아서 전달받을수 있게 설정해놈
+        proxy: {
+            '/api': 'http://localhost:8888'
+        },
         inline: true,
         liveReload: true,
         hot: false,
