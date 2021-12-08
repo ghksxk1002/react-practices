@@ -10,8 +10,8 @@
 ### ex08: BrowserRouter & SSR
 
 ### Install Dependency
-1. react-router: 6.0.x(2021.6 beta)
-2. react-router-dom: 6.0.x(2021.6 beta)
+1. react-router: 6.0.x(2021.6 beta)     : <Route></Route>
+2. react-router-dom: 6.0.x(2021.6 beta) : <HashRouter></HashRouter>
 
 ```bash
 $ npm i react-router react-router-dom 
