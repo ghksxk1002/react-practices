@@ -5,8 +5,26 @@ import Main from "./component/Main";
 import Gallery from "./component/Gallery";
 import Guestbook from "./component/Guestbook";
 
+// 아직 메뉴는 아니다...
 export default function App() {
     return (
-        <div>React Router 라이브러리 사용해 보기</div>
+        // 브라우저 라우터 사용
+        //*/
+        <HashRouter>
+            <Routes>
+                <Route path='/' element={<Main />}/>
+                <Route path='/gallery' element={<Gallery />}/>
+                <Route path='/guestbook' element={<Guestbook />}/>
+            </Routes>
+        </HashRouter>
+        /*/
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<Main />}/>
+                <Route path='/gallery' element={<Gallery />}/>
+                <Route path='/guestbook' element={<Guestbook />}/>
+            </Routes>
+        </BrowserRouter>
+        //*/
     );
 }
