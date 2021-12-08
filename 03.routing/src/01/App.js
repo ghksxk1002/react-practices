@@ -6,7 +6,7 @@ import Guestbook from "./component/Guestbook";
 export default function App() {
     // 라우터가 변경되면 변경된 라우터 값을 새로 렌더링 하기 위해
     // 상태값 지정
-    const [route, setRouter] = useState('');
+    const [route, setRouter] = useState('/');
     
     // 헤쉬체인지 이벤트를 받는 이벤트 함수
     useEffect(()=>{
